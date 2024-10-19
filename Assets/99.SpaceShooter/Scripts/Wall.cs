@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    public GameObject player;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (other.CompareTag("PlayerBullet"))
         {
-            Debug.Log("°¨Áö");
-            player.GetComponent<Rigidbody2D>().AddForceAtPosition(Vector2.zero * 500f, player.transform.position);
+            Destroy(other.gameObject);
         }
     }
-
 }

@@ -10,6 +10,10 @@ TagManager:
   - TrackingObject
   - Actors
   - Wall
+  - WallLeft
+  - WallRight
+  - WallUp
+  - WallDown
   layers:
   - Default
   - TransparentFX

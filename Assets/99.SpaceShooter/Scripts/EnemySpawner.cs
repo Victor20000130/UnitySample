@@ -11,11 +11,9 @@ public class EnemySpawner : MonoBehaviour
     public Transform enemyTransform;
 
     
-    public float WeithMinSize = -13f;
-    public float WeithMaxSize = 13f;
-    public float HeightMinSize = -8f;
-    public float HeightMaxSize = 8f;
-    public float enemySpeed = 3f;
+    public float rangeMin = -13f;
+    public float rangeMax = 13f;
+
 
     private float timeAfterspawn;
     private float spawnRate;
@@ -28,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(RespawnEnemy(enemyPrefab, 3f));
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
     }
 
@@ -43,24 +40,23 @@ public class EnemySpawner : MonoBehaviour
             spawnRate = Random.Range(spawnRateMin, spawnRateMax);
         }
 
-        if (transform.position.x < WeithMinSize)
+        if (transform.position.x < rangeMin)
         {
-            transform.position = new Vector3(WeithMinSize, transform.position.y);
+            transform.position = new Vector3(rangeMin, transform.position.y);
         }
-        else if (transform.position.x > WeithMaxSize)
+        else if (transform.position.x > rangeMax)
         {
-            transform.position = new Vector3(WeithMaxSize, transform.position.y);
+            transform.position = new Vector3(rangeMax, transform.position.y);
         }
-
         if (isTrue)
         {
             transform.Translate(new Vector3(1, 0) * Time.deltaTime * moveSpeed);
-            if (transform.position.x >= (WeithMaxSize - 1)) isTrue = false;
+            if (transform.position.x >= (rangeMax - 1)) isTrue = false;
         }
         else if (isTrue == false)
         {
             transform.Translate(new Vector3(-1, 0) * Time.deltaTime * moveSpeed);
-            if (transform.position.x <= (WeithMinSize + 1)) isTrue = true;
+            if (transform.position.x <= (rangeMin + 1)) isTrue = true;
         }
 
     }

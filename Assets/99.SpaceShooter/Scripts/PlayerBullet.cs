@@ -28,7 +28,6 @@ namespace SpaceShooter
             }
             
         }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
@@ -36,6 +35,11 @@ namespace SpaceShooter
                 Destroy(other.gameObject);
                 Destroy(base.gameObject);
             }
+            if (other.CompareTag("WallUp"))
+            {
+                Destroy(base.gameObject);
+            }
         }
+
     }
 }

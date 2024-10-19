@@ -10,5 +10,9 @@ public class DeadLineTrigger : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("PlayerBullet"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
