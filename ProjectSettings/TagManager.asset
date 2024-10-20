@@ -10,10 +10,7 @@ TagManager:
   - TrackingObject
   - Actors
   - Wall
-  - WallLeft
-  - WallRight
-  - WallUp
-  - WallDown
+  - Meteor
   layers:
   - Default
   - TransparentFX

@@ -64,13 +64,7 @@ public class PhysicsTest : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                 }
             }
-
-
-
         }
-
-
-
     }
 
     private void OnCollisionEnter(Collision collision)
