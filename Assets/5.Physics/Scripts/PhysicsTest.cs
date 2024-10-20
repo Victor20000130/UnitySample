@@ -44,7 +44,6 @@ public class PhysicsTest : MonoBehaviour
             //rb.maxLinearVelocity  //최대 직선 운동량을 제한
             //rb.drag        //(공기)저항
             //rb.angularDrag //회전 저항
-        
         }
 
         //Physics.Raycast
@@ -65,13 +64,7 @@ public class PhysicsTest : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                 }
             }
-
-
-
         }
-
-
-
     }
 
     private void OnCollisionEnter(Collision collision)

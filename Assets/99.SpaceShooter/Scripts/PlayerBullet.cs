@@ -10,7 +10,6 @@ namespace SpaceShooter
     {
         
         public float speed = 5f;
-        public SpriteRenderer spriteRenderer;
         private float timeAfterSpawn;
 
         private void Start()
@@ -26,14 +25,20 @@ namespace SpaceShooter
             {
                 Destroy(gameObject);
             }
-            
         }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
             {
                 Destroy(other.gameObject);
+                Destroy(base.gameObject);
+            }
+            if (other.CompareTag("Wall"))
+            {
+                Destroy(base.gameObject);
+            }
+            if (other.CompareTag("Meteor"))
+            {
                 Destroy(base.gameObject);
             }
         }

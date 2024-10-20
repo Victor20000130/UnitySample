@@ -10,10 +10,8 @@ public class EnemyRenderer : MonoBehaviour
     void Start()
     {
         spriteArr = Resources.LoadAll<Sprite>("Enemy");
-        //GetComponent<SpriteRenderer>().sprite = spriteArr[0];
         int i = Random.Range(0, spriteArr.Length);
         transform.GetComponent<SpriteRenderer>().sprite = spriteArr[i];
-
     }
 
 }
