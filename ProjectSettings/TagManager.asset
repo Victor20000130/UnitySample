@@ -15,17 +15,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Physics
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - UI Block
+  - CameraPassThrough
+  - FirstCamOnly
+  - Minimap Icon
+  - Player
+  - Enemy
+  - Box
+  - Plane
   - 
   - 
   - 
