@@ -22,7 +22,11 @@ namespace MyProject
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                isFocusing = false;
+                OnApplicationFocus(false);
+            }
+            else if (Input.anyKeyDown)
+            {
+                OnApplicationFocus(true);
             }
         }
         public static bool isFocusing = true;
@@ -35,7 +39,6 @@ namespace MyProject
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-
             }
             else
             {
