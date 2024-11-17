@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using Context = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 
@@ -37,6 +38,13 @@ namespace MyProject
 
         public InputActionAsset controlDefine;
 
+
+        public GameObject camRig;
+        private Camera cam;
+        public GameObject camZoomPos;
+
+        public RawImage crossHair;
+
         private void Awake()
         {
             controlDefine = GetComponent<PlayerInput>().actions;
@@ -45,6 +53,7 @@ namespace MyProject
             fireAction = controlDefine.FindAction("Fire");
             animator = GetComponent<Animator>();
             rig = GetComponent<RigBuilder>().layers[0].rig;
+            cam = camRig.GetComponentInChildren<Camera>();
         }
 
         private void OnEnable()
@@ -74,12 +83,35 @@ namespace MyProject
             StartCoroutine(FireCoroutine());
         }
 
+
+        private void Update()
+        {
+
+            ZoomInOut();
+        }
+
+        private void ZoomInOut()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                cam.transform.position = camZoomPos.transform.position;
+                cam.fieldOfView = 20;
+            }
+            if(Input.GetMouseButtonUp(1))
+            {
+                cam.transform.position = camRig.transform.position;
+                cam.fieldOfView = 60;
+            }
+        }
+
         private IEnumerator FireCoroutine()
         {
             untilFire = new WaitUntil(() => isFiring);
             waitSecFireLen = new WaitForSeconds(fireClip.length);
             while (true)
             {
+                Ray ray = new Ray(crossHair.transform.position, crossHair.transform.forward);
+                Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 0.2f);
                 yield return untilFire;
                 yield return waitSecFireLen;
             }

@@ -55,7 +55,7 @@ namespace MyProject
             transform.Rotate(0f, mouseDelta.x * mouseSensivity * Time.deltaTime, 0f);
             rigAngle -= mouseDelta.y * mouseSensivity * Time.deltaTime;
 
-            rigAngle = Mathf.Clamp(rigAngle, -90f, 90f);
+            rigAngle = Mathf.Clamp(rigAngle, -40f, 20f);
             cameraRig.localEulerAngles = new Vector3(rigAngle, 0, 0);
         }
     }
