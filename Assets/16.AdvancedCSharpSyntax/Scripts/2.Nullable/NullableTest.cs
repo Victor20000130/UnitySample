@@ -27,7 +27,6 @@ namespace MyProject
         }
 
         private void Start()
-
         {
             //1. 3항 연산자 : bool ? 조건 true : 조건 false;
             rend.material.color = isBlue ? Color.blue : Color.red;
@@ -89,7 +88,6 @@ namespace MyProject
 
             print($"nullableInt has Value? : {nullableInt.HasValue}");
             print(localInt);
-
         }
 
         public class MyClass
@@ -107,7 +105,6 @@ namespace MyProject
                 return a;
 
             }
-
         }
     }
 }
