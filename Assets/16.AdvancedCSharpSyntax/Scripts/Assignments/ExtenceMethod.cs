@@ -17,7 +17,8 @@ namespace MyProject
 			print("abcdefg".ToUpper());
 			string upperStr = "abcdefg".ToUpper();
 			string str = "¾È³ç ÇÏ¼¼¿ä".Split(' ')[0];
-			
+			"ABCDE".ToLower();
+			"abcde".ToUpper();
 		}
 	}
 
@@ -25,7 +26,6 @@ namespace MyProject
 	{
 		public static string[] Split(this string str, char inStr)
 		{
-
 			List<string> list = new List<string>();
 			string temp = null;
 			for (int i = 0; i < str.Length; i++)
@@ -42,6 +42,12 @@ namespace MyProject
 		public static string ToLower(this string str)
 		{
 			return str.ToLower();
+		}
+
+		public static string ToUpper(this string str)
+		{
+
+			return str.ToUpper();
 		}
 
 	}

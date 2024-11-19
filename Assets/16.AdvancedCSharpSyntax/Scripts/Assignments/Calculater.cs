@@ -26,11 +26,11 @@ namespace MyProject
 			devide.onClick.AddListener(() => { calc += Devide; });
 			equal.onClick.AddListener(() =>
 			{
-				Calc(calc.Invoke(float.Parse(inputNum1.text), float.Parse(inputNum2.text)));
+				Calc(calc?.Invoke(float.Parse(inputNum1.text), float.Parse(inputNum2.text)));
 			});
 		}
 
-		private void Calc(float res) => print(res);
+		private void Calc(float? res) => print(res);
 
 		private float Plus(float a, float b) => a + b;
 
