@@ -29,15 +29,10 @@ namespace MyProject
 				Calc(calc?.Invoke(float.Parse(inputNum1.text), float.Parse(inputNum2.text)));
 			});
 		}
-
 		private void Calc(float? res) => print(res);
-
 		private float Plus(float a, float b) => a + b;
-
 		private float Minus(float a, float b) => a - b;
-
 		private float Multiple(float a, float b) => a * b;
-
 		private float Devide(float a, float b) => a / b;
 	}
 }

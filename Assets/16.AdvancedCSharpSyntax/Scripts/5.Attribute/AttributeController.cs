@@ -63,14 +63,11 @@ namespace MyProject
 			{
 				Type type = monoBehaviour.GetType();
 				IEnumerable<FieldInfo> scaleAttachedFields =
-
-				type.GetFields(bind).Where(x => x.HasAttribute<SizeAttribute>());
-				scaleAttachedFields =
+							//type.GetFields(bind).Where(x => x.HasAttribute<SizeAttribute>());
 							from field in type.GetFields(bind)
 							where field.HasAttribute<SizeAttribute>()
 							select field;
 
-				//Debug.Log(scaleAttachedFields.ToString());
 				foreach (FieldInfo fi in scaleAttachedFields)
 				{
 					Debug.Log(fi.Name);
@@ -128,7 +125,6 @@ namespace MyProject
 		{
 			sizeDelta = new Vector2(width, height);
 		}
-
 	}
 
 	public static class AttributeHelper
